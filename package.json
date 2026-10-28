@@ -1,0 +1,16 @@
+{
+  "name": "timewise-ai",
+  "version": "1.0.0",
+  "description": "TimeWise AI – Smart Time Management Assistant",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "node start-dev.js",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "start": "node start-dev.js",
+    "build": "npm install --prefix frontend && npm run build --prefix frontend && node -e \"const fs=require('fs'); if(fs.existsSync('dist')) fs.rmSync('dist', {recursive:true,force:true}); fs.cpSync('frontend/dist', 'dist', {recursive:true});\""
+  }
+}
